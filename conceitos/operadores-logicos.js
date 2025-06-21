@@ -1,7 +1,7 @@
 /** 
 &&  - E / AND
 ||  - OU / OR
-!   - NÃƒO / NOT
+!   - NÃO / NOT
 */
 
 // && - E / AND

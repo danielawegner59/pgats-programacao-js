@@ -1,4 +1,13 @@
 /*
+
+  operadores = comparacao, logica, aritmÃ©tica
+
+    VALOR A maior que VALOR B
+    VALOR A menor que VALOR B
+
+    == -> VARIAVEL A 'possui o mesmo valor que' VARIAVEL B 
+    === -> VARIAVEL A 'possui o mesmo valor E possui o mesmo tipo de dado que' VARIAVEL B
+
   >   - maior que
   >=  - maior ou igual que
   <   - menor que
@@ -8,39 +17,26 @@
   === - igualdade de valores e tipo de dado
 */
 
-console.log(`10 > 5 = ${ 10 > 5 }`) // verdadeiro = true -- interpolação vai concatenar a string com o resuldado do booleano
-console.log("10 > 5 = ${ 10 > 5 }") // verdadeiro = true -- aspas duplas vai concatenar tudo
 
-// maior que
-console.log(10 > 5) // verdadeiro
-console.log(10 > 20) // falso
+const valido = verificarSeONomeEValido(nomeFormatado)
 
-// maior ou igual
-console.log(10 >= 10) // verdadeiro
-console.log(10 >= 9) // verdadeiro
+console.log(nomeDog)
+console.log(nomeFormatado)
+console.log(valido)
 
-// menor que 
-console.log(10 < 5) // falso
-console.log(10 < 20) // verdadeiro
+function removerCaracteresEspeciais(nome) {
+  // return nome.replace(/[^a-zA-ZÃ€-Ã¿]/g, "");
+  return nome.replace(/[^a-zA-ZÃ€-Ã¿\s]/g, "");
+}
 
-// menor ou igual 
-console.log(10 <= 10) // verdadeiro
-console.log(10 <= 9) // falso
+function removerEspacosEntreAPalavra(nome) {
+  return nome.replace(/\s+/g, "")
+}
 
-// igualdade somente de valores
-console.log(1 == '1')
-console.log(true == 'true') 
-console.log(true == 1) // verdadeiro
-console.log(false == 1) // falso
-console.log(null == undefined) // verdadeiro
-console.log('' == 0) // verdadeiro
+function tornarAPrimeiraLetraMaiuscula(nome) {
+  return nome.charAt(0).toUpperCase() + nome.slice(1, nome.length).toLowerCase()
+}
 
-// igualdade de valores e tipo de dado
-console.log(1 === '1') // falso
-console.log(true === 1) // falso
-console.log(false === 1) // falso
-console.log(null === undefined) // falso
-
-// diferença de valores
-console.log(1 != 2) // verdadeiro
-console.log(1 !== 2) // verdadeiro
+function verificarSeONomeEValido(nome) { 
+  return nome.split(" ").length === 1
+}
