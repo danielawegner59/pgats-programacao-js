@@ -19,18 +19,19 @@ idade 2 + porte M = sim, pela Idade
 idade 3 + porte P = sim, pela Idade
 idade 4 + porte P = sim, pelo porte
  */
-
-const nom = 'Rex'
+const nome = 'Rex'
 const idade = 4
-const porte = 'P'
 
+//const adocao = idade < 2 ? 'não' : 'sim' -- até aqui seria uma opção sem o exercício extra
+const porte = 'P'
 const idadeMinima = 2
 
-const adocao = idade >= idadeMinima
+const adocao = idade >= idadeMinima || porte === 'P' //-- os || são operadores lógicos OU
 			? 'sim'
             : porte === 'P'
 			? 'sim' 
             : 'não'
+console.log(adocao) //-- aqui outra opção de fazer o exercício com as variáveis ali     
 
 const adocaov2 = idade >= idadeMinima || porte === 'P'     
 

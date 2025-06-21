@@ -9,6 +9,8 @@
  *  - A raça com a primeira letra maiúscula
  *  - Peso
 */
+numero = "5"
+console.log(numero * 2)
 
 const nome = "Dogo", raca = "vira-lata" 
 let idade = 1, peso = 1.2, adotado = true
