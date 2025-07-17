@@ -39,5 +39,5 @@ jobs:
         run: yarn playwright install
 
       # executar os testes e2e
-      - name:  Executando testes E2E
-        run: yarn run e2e
+      - name:  Executando testes unitários
+        run: node testes/trabalho-final.spec.js
