@@ -5,8 +5,8 @@
   "description": "Trabalho final - Integração Contínua para Automação de Testes",
   "main": "index.js",
   "scripts": {
-    "e2e": "mocha --timeout 5000 D:\\Pessoal-Pos\\Modulo3-ProgramacaoParaAutomacaoDeTestes\\Pgats-Programacao-js\\testes\\trabalho-final.spec.js",
-    "test": "mocha --timeout 5000 D:\\Pessoal-Pos\\Modulo3-ProgramacaoParaAutomacaoDeTestes\\Pgats-Programacao-js\\testes\\trabalho-final.spec.js",
+    "e2e": "mocha --timeout 5000 D:\\Pessoal-Pos\\Modulo3-ProgramacaoParaAutomacaoDeTestes\\Pgats-Programacao-js\\testes\\trabalho-final.js",
+    "test": "mocha --timeout 5000 D:\\Pessoal-Pos\\Modulo3-ProgramacaoParaAutomacaoDeTestes\\Pgats-Programacao-js\\testes\\trabalho-final.js",
     "start": "node index.js"
   },
   "keywords": [],

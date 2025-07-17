@@ -11,33 +11,35 @@ on:
 
 # trabalhos/tarefas dentro do pepeline = jobs
 jobs:
-  e2e-tests:    
+  run-mocha-tests:    
 
     # maquina que o job vai executar
     runs-on: ubuntu-latest
 
     # passos do script de build
     steps:
-      # clone do projeto
-      - uses: actions/checkout@v4
+       # clone do projeto
+      - name: Checkout do Código
+        uses: actions/checkout@v4
 
       # instalacao do node
-      - uses: actions/setup-node@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 22.x # Recomendo usar uma versão LTS estável como 20.x ou 22.x
 
-      # instalacao do Yarn
-      - name: Instalando Yarn
+      # instalacao do Yarn (o Yarn é um pacote global que o npm pode instalar)
+      - name: Instalando Yarn CLI
         run: npm install -g yarn
 
-      # instalacao das dependencias
-      - name: Instalando dependencias
-        run: yarn
+      # instalacao das dependencias do projeto (incluindo o Mocha)
+      - name: Instalando Dependências do Projeto
+        run: yarn install --frozen-lockfile # 'yarn' é o mesmo que 'yarn install'
 
-      # instalacao do Playwright
-      - name: Instalando Playwright
-        run: yarn playwright install
+      # --- REMOVIDO: Instalacao do Playwright (pois os testes são Mocha) ---
+      # - name: Instalando Playwright
+      #   run: yarn playwright install
 
-      # executar os testes e2e
-      - name:  Executando testes unitários
-        run: node testes/trabalho-final.spec.js
+      # executar os testes Mocha
+      - name: Executando Testes com Mocha
+        run: yarn run test # ALTERADO: Aponta para o script 'test' que executa o Mocha
